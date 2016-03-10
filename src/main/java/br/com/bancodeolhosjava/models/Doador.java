@@ -7,12 +7,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Doador {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@NotNull(message="Não pode ser vazio.")
 	private String nome;
 	private String idade;
 	private String sexo;

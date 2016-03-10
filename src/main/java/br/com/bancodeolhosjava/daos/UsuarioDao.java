@@ -18,7 +18,9 @@ public class UsuarioDao {
 	}
 	
 	public void salvar(Usuario usuario){
+		em.getTransaction().begin();
 		em.persist(usuario);
+		em.getTransaction().commit();
 	}
 	
 	public void remover(Usuario usuario){
@@ -29,5 +31,10 @@ public class UsuarioDao {
 		// TODO Auto-generated method stub
 		return em.find(Usuario.class, usuario.getId());
 	}
-
+	 
+	public boolean existe(Usuario usuario) {
+		return !em.createQuery("select u from Usuario u where u.nome = :nome and u.senha = :senha", Usuario.class)
+				.setParameter("nome", usuario.getNome()).setParameter("senha", usuario.getSenha()).getResultList()
+				.isEmpty();
+	}
 }
