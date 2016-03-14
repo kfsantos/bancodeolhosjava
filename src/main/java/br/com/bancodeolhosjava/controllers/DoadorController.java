@@ -61,7 +61,7 @@ public class DoadorController {
 		result.include("mensagem", "Doador incluso com sucesso!");
 		result.redirectTo(this).lista();
 	}
-
+	@Post
 	public void remover(Doador doador) {
 		doadorDAO.remover(doador);
 		result.include("mensagem", "Doador removido com sucesso!");

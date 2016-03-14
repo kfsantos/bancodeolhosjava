@@ -2,6 +2,7 @@ package br.com.bancodeolhosjava.controllers;
 
 import javax.inject.Inject;
 
+import br.com.bancodeolhosjava.annotation.Public;
 import br.com.bancodeolhosjava.daos.UsuarioDao;
 import br.com.bancodeolhosjava.models.Usuario;
 import br.com.caelum.vraptor.Controller;
@@ -30,22 +31,21 @@ public class LoginController {
 	public LoginController(){
 		this(null, null, null, null);
 	}
-	@Get 
+	
+	@Get @Public
 	public void formulario(){
 		
 	}
-	@Post
+	
+	@Post @Public
 	public void autentica(Usuario usuario){
-		System.out.println("nome "+usuario.getNome()+" senha "+usuario.getSenha());
 		if(!dao.existe(usuario)){
 			validator.add(new I18nMessage("login", "login.invalido"));
-			validator.onErrorForwardTo(this).formulario();
-		}
-		
+			validator.onErrorUsePageOf(this).formulario();
+		}		
 		usuarioLogado.setUsuario(usuario);
 		result.redirectTo(DoadorController.class).lista();
 	}
 	
 	
-
 }

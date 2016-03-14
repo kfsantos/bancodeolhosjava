@@ -11,16 +11,18 @@
 </head>
 <body>
 	<dir class="container">
-		<h2>Login</h2>
+	<h1 align="center">Login</h1>
 		<form action="<c:url value='/login/autentica'/>" method="post">
 			Nome<input class="form-control" type="text" name="usuario.nome"><br />
 			Senha<input class="form-control" type="password" name="usuario.senha"><br />
 			<button class="btn btn-primary" type="submit">Logar</button>
 		</form>
-		<br />
-		<c:forEach items="${errors }" var="erro">
-${erro.category} - ${erro.message} <br />
-		</c:forEach>
+
+
 	</dir>
+	<br />
+	<c:forEach items="${errors }" var="erro">
+${erro.category} - ${erro.message} <br />
+	</c:forEach>
 </body>
 </html>

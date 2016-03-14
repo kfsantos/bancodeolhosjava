@@ -16,7 +16,7 @@
 <h2>Lista de Doadores</h2>		
 <br/>
 		<table class="table table-stripped table-hover table-bordered">
-			<thead>
+		
 				<tr>
 					<th>Nome</th>
 					<th>Sexo</th>
@@ -24,7 +24,7 @@
 					<th>Receptor</th>
 					<th>Causa da Morte</th>					
 				</tr>
-			</thead>
+		
 			<tbody>
 				<c:forEach items="${doadorList}" var="doador">
 					<tr>

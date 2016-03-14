@@ -18,9 +18,9 @@ public class UsuarioDao {
 	}
 	
 	public void salvar(Usuario usuario){
-		em.getTransaction().begin();
+		
 		em.persist(usuario);
-		em.getTransaction().commit();
+		
 	}
 	
 	public void remover(Usuario usuario){

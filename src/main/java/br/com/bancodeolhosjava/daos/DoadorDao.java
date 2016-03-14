@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.bancodeolhosjava.models.Doador;
-import br.com.bancodeolhosjava.models.Usuario;
 
 @RequestScoped
 public class DoadorDao {
