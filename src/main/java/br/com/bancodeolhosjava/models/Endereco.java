@@ -14,6 +14,7 @@ public class Endereco {
 	private String bairro;
 	private String cidade;
 
+
 	public Long getId() {
 		return id;
 	}

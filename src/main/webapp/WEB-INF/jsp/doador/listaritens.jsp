@@ -22,6 +22,7 @@
 					<th>Receptor</th>
 					<th>Causa da Morte</th>
 					<th>Remover</th>
+					<th>Editar</th>
 					
 				</tr>
 			</thead>
@@ -36,6 +37,12 @@
 						<td><a
 							href="<c:url value="/doador/remover"/>?doador.id=${doador.id}"
 							onclick="return confirm('Desejar remover o doador?')">Remover</a>
+						</td>
+						<td>
+							<a href="<c:url value="/doador/editar"/>?doador.id=${doador.id}">
+							Editar
+							</a>
+							
 						</td>
 					</tr>
 				</c:forEach>

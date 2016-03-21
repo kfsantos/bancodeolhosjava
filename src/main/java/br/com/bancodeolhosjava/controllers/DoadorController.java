@@ -45,6 +45,12 @@ public class DoadorController {
 	}
 
 	@Get
+	public void editar(Doador doador) {
+		result.include("doador", doadorDAO.buscar(doador));
+
+	}
+
+	@Get
 	public void lista() {
 		result.include("doadorList", doadorDAO.listar());
 	}
@@ -61,7 +67,8 @@ public class DoadorController {
 		result.include("mensagem", "Doador incluso com sucesso!");
 		result.redirectTo(this).lista();
 	}
-	@Post
+
+	@Get
 	public void remover(Doador doador) {
 		doadorDAO.remover(doador);
 		result.include("mensagem", "Doador removido com sucesso!");
@@ -73,5 +80,5 @@ public class DoadorController {
 		validator.onErrorForwardTo(this).formulariobusca();
 		result.redirectTo(this).listaritens(doador.getNome());
 	}
-
+	
 }

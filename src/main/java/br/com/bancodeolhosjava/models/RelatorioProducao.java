@@ -21,6 +21,8 @@ public class RelatorioProducao {
 	private String motivoDescarte;
 	private String causaDaMorte;
 
+	
+
 	public Long getId() {
 		return id;
 	}

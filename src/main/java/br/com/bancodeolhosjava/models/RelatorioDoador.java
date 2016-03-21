@@ -18,6 +18,8 @@ public class RelatorioDoador {
 	private String localTx;
 	private String tipoDeTx;
 
+	
+
 	public Long getId() {
 		return id;
 	}
